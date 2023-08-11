@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --px: 3vw;
+  --header-height: 60px;
+  --base: #005148;
+  --accent: #afbf73;
+  --text: #f5de83;
+}
+body {
+  font-family: "Roboto Slab", serif;
+}
+video {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+
+  &::cue {
+    background-image: linear-gradient(to bottom, dimgray, lightgray);
+    color: papayawhip;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: #fff;
+  // color: var(--base);
+  box-shadow: 1px 1px 15px #88888886;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--px);
+  height: var(--header-height);
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.logo {
+  display: block;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  &__img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  &__text {
+    padding: 0 10px;
+    color: #222;
+  }
+}
+
+main {
+  padding: var(--header-height) var(--px) 0 var(--px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // overflow: hidden;
+}
+
+.videos {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 1vw;
+}
+
+.video__container {
+  margin-top: 2rem;
+  display: block;
+  cursor: pointer;
+  padding: 1rem 10px;
+
+  .video__thumbnail {
+    pointer-events: none;
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: border-radius 350ms ease-out;
+    img {
+      max-width: 100%;
+      transition: transform 450ms ease-in-out;
+    }
+
+    span {
+      position: absolute;
+      right: 5%;
+      bottom: 5%;
+      background-color: #000;
+      border-radius: 5px;
+      padding: 5px;
+      color: #fff;
+    }
+
+    &:hover {
+      border-radius: 0;
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .video__info {
+    pointer-events: none;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  main {
+    flex-direction: row-reverse;
+  }
+  nav {
+    font-size: 1.2rem;
+  }
+  .videos {
+    width: 60%;
+    max-width: 350px;
+    height: calc(100vh - var(--header-height));
+    overflow: hidden scroll;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #eee;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      width: 4px;
+      margin: auto;
+      background-color: #555;
+    }
+  }
+}
+
+.player-container {
+  padding: 1rem;
+  padding-right: 0;
+  width: 100%;
+  .player-title {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.video-active {
+  position: relative;
+  &::after {
+    content: "";
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: #00000044;
+    pointer-events: none;
+  }
+}
+/* custom player color */
+
+.demo-player-dimensions {
+  margin: auto;
+  // width: 640px;
+  // height: 360px;
+}
+
+.vjs-audio-button {
+  .vjs-icon-placeholder {
+    &::before {
+      content: "\266A" !important;
+    }
+  }
+}
+
+.cld-video-player-demo-player.cld-video-player-skin-dark
+  .vjs-menu-button
+  .vjs-menu-content {
+  max-height: 150px;
+  overflow-y: auto;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background-color: #777;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    width: 4px;
+    margin: auto;
+    background: #fff;
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MultiTube</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.scss" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="logo">
+          <img src="logo.png" alt="MultiTube logo" class="logo__img" />
+          <span class="logo__text">MultiTube</span>
+        </a>
+
+        <p>Fully Adaptive Modern Media Player</p>
+      </nav>
+    </header>
+    <main>
+      <section class="player-container">
+        <video
+          id="demo-player"
+          controls
+          autoplay
+          class="cld-video-player cld-video-player-skin-dark"
+          width="500"
+        ></video>
+
+        <h2 class="player-title"></h2>
+      </section>
+
+      <section class="videos"></section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
