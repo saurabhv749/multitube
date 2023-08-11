@@ -46,4 +46,5 @@ Demo available in `assets/multitube_demo.mp4`
 ## Resources
 
 [What is live streaming?](https://www.cloudflare.com/learning/video/what-is-live-streaming/)
+
 [stream,rendition and variants in hls live streaming](https://www.perplexity.ai/search/9d38203e-fd90-4c44-bae7-1a567d503753?s=c)
